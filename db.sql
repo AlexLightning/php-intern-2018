@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 24, 2018 at 10:32 PM
+-- Generation Time: Jul 24, 2018 at 11:29 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.1.19
 
@@ -34,6 +34,14 @@ CREATE TABLE `companies` (
   `description` text COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
+--
+-- Dumping data for table `companies`
+--
+
+INSERT INTO `companies` (`id`, `name`, `description`) VALUES
+(1, 'SoftWeb', 'Web devs'),
+(2, 'MobileWorld', 'Android and IOS devs');
+
 -- --------------------------------------------------------
 
 --
@@ -45,6 +53,16 @@ CREATE TABLE `employees` (
   `company_id` int(10) UNSIGNED NOT NULL,
   `name` varchar(32) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `employees`
+--
+
+INSERT INTO `employees` (`id`, `company_id`, `name`) VALUES
+(1, 2, 'Ion Vasile'),
+(2, 1, 'Radu Andrei'),
+(3, 1, 'Ionescu Roxana'),
+(4, 2, 'Nistor Ioana');
 
 --
 -- Indexes for dumped tables
@@ -71,13 +89,13 @@ ALTER TABLE `employees`
 -- AUTO_INCREMENT for table `companies`
 --
 ALTER TABLE `companies`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
